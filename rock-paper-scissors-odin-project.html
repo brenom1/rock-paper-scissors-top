@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, paper, scissors</title>
+</head>
+
+<body>
+    <script>
+        function getComputerChoice() {
+            let itemsComputer = ["rock", "scissors", "paper"]
+            let randomElement = itemsComputer[Math.floor(Math.random() * itemsComputer.length)];
+            return randomElement
+        }
+
+        let pcScore = 0
+        let playerScore = 0
+
+        function playGame() {
+            function playRound(playerSelection, computerSelection) {
+
+                playerSelection = prompt("Enter a item (rock, scissors, paper)").toLowerCase()
+                computerSelection = getComputerChoice()
+
+                if (playerSelection == "rock" && computerSelection == "scissors") {
+                    console.log("You WIN, you choose was: " + playerSelection + " and the computer choose was " + computerSelection)
+                    return "Player score: " + ++playerScore + " // " + "Computer score: " + pcScore
+
+                } else if (playerSelection == "scissors" && computerSelection == "rock") {
+                    console.log("You LOSE, your choose was: " + playerSelection + " and the computer choose was " + computerSelection)
+                    return "Player score: " + playerScore + " // " + "Computer score: " + ++pcScore
+
+                } else if (playerSelection == "scissors" && computerSelection == "paper") {
+                    console.log("You WIN, you choose was: " + playerSelection + " and the computer choose was " + computerSelection)
+                    return "Player score: " + ++playerScore + " // " + "Computer score: " + pcScore
+
+                } else if (playerSelection == "paper" && computerSelection == "scissors") {
+                    console.log("You LOSE, your choose was: " + playerSelection + " and the computer choose was " + computerSelection)
+                   return "Player score: " + playerScore + " // " + "Computer score: " + ++pcScore
+
+                } else if (playerSelection == "paper" && computerSelection == "rock") {
+                    console.log("You WIN, you choose was: " + playerSelection + " and the computer choose was " + computerSelection)
+                    return "Player score: " + ++playerScore + " // " + "Computer score: " + pcScore
+
+                } else if (playerSelection == "rock" && computerSelection == "paper") {
+                    console.log("You LOSE, your choose was: " + playerSelection + " and the computer choose was " + computerSelection)
+                    return "Player score: " + playerScore + " // " + "Computer score: " + ++pcScore
+
+                } else if (playerSelection == computerSelection) {
+                    console.log("TIE, you choose was: " + playerSelection + " and the computer choose was " + computerSelection)
+                    return "Player score: " + playerScore + " // " + "Computer score: " + pcScore
+
+                } else if (playerSelection == null) {
+                    return "Game over"
+                }
+            }
+
+            return playRound()
+            return "teste"
+        }
+    </script>
+</body>
+
+</html>
